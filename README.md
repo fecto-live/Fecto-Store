@@ -1,4 +1,4 @@
-# FECTO — zero-cost starter store
+# FECTO — store
 
 This is a working front-end e-commerce starter for FECTO.
 
