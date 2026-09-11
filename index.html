@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FECTO — Wear Your Identity</title>
+  <meta name="description" content="FECTO oversized essentials for everyone.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">FREE SHIPPING ON ORDERS ABOVE ₹999</div>
+
+  <header class="nav">
+    <a class="logo" href="#home"><img src="fecto-logo.svg" alt="FECTO"></a>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" id="openCart" aria-label="Open cart">Cart <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">WEAR YOUR IDENTITY</p>
+        <h1>FECTO</h1>
+        <p class="hero-text">Oversized essentials. Clean designs. Bigger comfort. Made for everyone.</p>
+        <a class="btn light" href="#shop">SHOP NOW →</a>
+      </div>
+      <div class="hero-art">
+        <div class="shirt-shape black"></div>
+        <div class="shirt-shape white"></div>
+        <span>OVERSIZED<br>ESSENTIALS</span>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2>NEW ARRIVALS</h2>
+        </div>
+        <p>Fresh drops. Same mindset.</p>
+      </div>
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="black">Black</button>
+        <button class="filter" data-filter="white">White</button>
+        <button class="filter" data-filter="graphic">Graphic</button>
+      </div>
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="split-banners">
+      <article class="banner dark">
+        <div>
+          <p class="eyebrow">THE FECTO FIT</p>
+          <h2>OVERSIZED<br>FOR A BIGGER YOU</h2>
+          <p>Comfort meets character.</p>
+        </div>
+      </article>
+      <article class="banner photo">
+        <div>
+          <p class="eyebrow">FOR EVERYONE</p>
+          <h2>MEN. WOMEN.<br>EVERY YOU.</h2>
+          <p>One fit. Your identity.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="values">
+      <div><b>PREMIUM FABRIC</b><span>Soft. Durable. Everyday ready.</span></div>
+      <div><b>UNISEX FIT</b><span>Designed for everyone.</span></div>
+      <div><b>TIMELESS DESIGN</b><span>Trends fade. FECTO stays.</span></div>
+      <div><b>CONSCIOUS CHOICES</b><span>Smaller footprint. Bigger tomorrow.</span></div>
+    </section>
+
+    <section class="about section" id="about">
+      <p class="eyebrow">ABOUT FECTO</p>
+      <h2>MORE THAN A T-SHIRT.<br>A MINDSET.</h2>
+      <p>FECTO is built around oversized silhouettes, everyday comfort and simple pieces that let the person wearing them stand out.</p>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div>
+      <div class="logo"><img src="fecto-logo.svg" alt="FECTO"></div>
+      <p>Wear your identity.</p>
+    </div>
+    <div><b>SHOP</b><a href="#shop">All T-shirts</a><a href="#about">About</a></div>
+    <div><b>HELP</b><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Size Guide</a></div>
+    <div><b>CONTACT</b><p>hello@fecto.in</p><p>© 2026 FECTO</p></div>
+  </footer>
+
+  <div class="drawer-backdrop" id="backdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-head"><h2>Your Cart</h2><button id="closeCart">×</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-bottom">
+      <div class="total"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+      <button class="btn dark-btn full" id="checkoutBtn">CHECKOUT →</button>
+      <small>Orders are placed securely through the website.</small>
+    </div>
+  </aside>
+
+  <div class="modal" id="checkoutModal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeCheckout">×</button>
+      <p class="eyebrow">CHECKOUT</p>
+      <h2>Complete your order</h2>
+      <form id="checkoutForm">
+        <input name="name" placeholder="Full name" required>
+        <input name="phone" placeholder="Phone number" inputmode="tel" required>
+        <input name="email" placeholder="Email address" type="email" required>
+        <textarea name="address" placeholder="Full delivery address" required></textarea>
+        <div class="two">
+          <input name="city" placeholder="City" required>
+          <input name="pincode" placeholder="PIN code" inputmode="numeric" required>
+        </div>
+        <select name="payment" required>
+          <option value="">Payment method</option>
+          <option value="COD">Cash on Delivery</option>
+          <option value="ONLINE">Online payment (connect gateway later)</option>
+        </select>
+        <div class="order-summary" id="checkoutSummary"></div>
+        <button class="btn dark-btn full" type="submit">PLACE ORDER →</button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="success modal" id="successModal">
+    <div class="modal-card success-card">
+      <p class="eyebrow">ORDER CONFIRMED</p>
+      <h2>Thank you for choosing FECTO.</h2>
+      <p id="successText"></p>
+      <button class="btn dark-btn" id="doneBtn">CONTINUE SHOPPING</button>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
